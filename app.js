@@ -10,7 +10,7 @@ var io      = require('socket.io');
 var chalk   = require('chalk'); //style the console log
 
 var server_ip_address = Number(process.env.OPENSHIFT_NODEJS_IP) || '127.0.0.1'
-var server_port = Number(process.env.OPENSHIFT_NODEJS_PORT) || Number(process.env.PORT) || 3000
+var server_port = process.env.PORT || 3000
 // Set static paths
 app.use(express.static(path.join(__dirname + '/node_modules')));
 app.use(express.static(path.join(__dirname + '/public')));
