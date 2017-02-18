@@ -15,7 +15,7 @@ var server_port = Number(process.env.OPENSHIFT_NODEJS_PORT) || Number(process.en
 app.use(express.static(path.join(__dirname + '/node_modules')));
 app.use(express.static(path.join(__dirname + '/public')));
 
-var mongodb_connection_string = 'mongodb://root:123456@localhost/admin'; //change it to your mongo user/pass
+var mongodb_connection_string = 'mongodb://pedro:admin@ds157349.mlab.com:57349/donorapp'; //change it to your mongo user/pass
 
 if(process.env.OPENSHIFT_MONGODB_DB_URL){
   mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL + db_name;
