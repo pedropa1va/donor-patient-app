@@ -9,15 +9,24 @@ var path    = require('path');
 var io      = require('socket.io');
 var chalk   = require('chalk'); //style the console log
 
-
+var server_ip_address = Number(process.env.OPENSHIFT_NODEJS_IP) || '127.0.0.1'
+var server_port = Number(process.env.OPENSHIFT_NODEJS_PORT) || Number(process.env.PORT) || 3000
 // Set static paths
 app.use(express.static(path.join(__dirname + '/node_modules')));
 app.use(express.static(path.join(__dirname + '/public')));
 
 
+
 //Mongodb setup -------------------------------------------------
+
+var mongodb_connection_string = 'mongodb://root:123456@localhost/admin'; //change it to your mongo user/pass
+
+if(process.env.OPENSHIFT_MONGODB_DB_URL){
+  mongodb_connection_string = process.env.OPENSHIFT_MONGODB_DB_URL + db_name;
+}
+
 var Mongoose = require('mongoose');
-var db = Mongoose.createConnection('mongodb://root:123456@localhost/admin'); //change it to your mongo user/pass
+var db = Mongoose.createConnection(mongodb_connection_string); 
 
 var DonorSchema = require('./model/Model.js').DonorSchema;
 var Donor = db.model('donors', DonorSchema);
@@ -27,8 +36,8 @@ db.once('open', function() {
   // we're connected!
 });
 
-var server = app.listen(Number(process.env.PORT) || 3000, function () {
-  console.log(chalk.magenta('Server listening on port ' + 3000));
+var server = app.listen(server_port, server_ip_address,function () {
+  console.log(chalk.magenta('Listening on ' + server_ip_address + ', port ' +  server_port));
 });
 
 /*
@@ -63,10 +72,10 @@ function updatePins(){
     alldonors = [];
     var allpins = db.collection('donors').find({});
     if(allpins != undefined){ 
-	    allpins.forEach(function (item){
-	        alldonors.push(item);
-	    });
-	}
+        allpins.forEach(function (item){
+            alldonors.push(item);
+        });
+    }
 
 }
 
