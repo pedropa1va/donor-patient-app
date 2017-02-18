@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+  <title>Blood Donor Finder App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="icon" href="img/blood_drop.png">
+
+  <!-- Socket.io src: -->
+  <script src="socket.io/socket.io.js"></script>
+
+  <!-- JQuery: -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- JQuery mask for input form formatting -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.62/jquery.inputmask.bundle.js"></script>
+
+  <!-- Bootstrap: -->
+  <!-- Latest compiled and minified Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified Bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <!-- ArcGIS CSS: -->
+  <link rel="stylesheet" href="https://js.arcgis.com/3.17/esri/css/esri.css">
+  
+  <!-- Our application main css: -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Babel script for testing: -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+  <!-- ArcGIS: -->
+  <script src="https://js.arcgis.com/3.17/"></script>
+
+</head>
+<body>
+  <!-- <div id="wrapper"> -->
+    <div id="map"></div>
+    <div id="LocateButton"></div>
+    <div id="search"></div>
+    <div id="app"></div>
+    <div id="title"></div>
+    <div id="subtitle"></div>
+    <div id="legend"></div>
+  <!-- </div> -->
+  <!-- Bundle file generated from Webpack: -->
+  <script src="js/bundle.js"></script>
+
+  <!-- Map component on React: -->
+  <script src="js/Esri.js" type="text/babel"></script>
+</body>
+</html>

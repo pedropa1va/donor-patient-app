@@ -1,0 +1,168 @@
+html, body{
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+#wrapper {
+	height: 100%;
+	position: relative;
+}
+
+#map {
+	height: 100%;
+}
+
+#app {
+
+	width: 100%;
+	height: 200px;
+	background: rgba(255, 255, 255, 0.2);
+
+	position:absolute;
+	left: 0; right:0;
+	top:0;
+	margin:auto;
+
+	/*this to solve "the content will not be cut when the window is smaller than the content": */
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#app:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+#search {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	top: 20px;
+	left: 74px;
+}
+
+#LocateButton {
+	position: absolute;
+	top: 95px;
+	left: 20px;
+	z-index: 50;
+}
+
+.initial {
+	/*padding-top: 40%;*/
+	position:relative;
+	left:0; right:0;
+	top:0; bottom:0;
+	margin:auto;
+
+	/*this to solve "the content will not be cut when the window is smaller than the content": */
+	max-width:100%;
+	max-height:100%;
+	overflow:auto;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#viewDiv {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+.zoom-btns {
+	float: left;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+}
+.button {
+	display: inline-block;
+	position: relative;
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 2em;
+	color: #646464;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+}
+.button.circle {
+	border-radius: 50%;
+}
+.button:hover {
+	opacity: 0.8;
+	color: rgba(0, 0, 0, 0.25);
+}
+.button.raised {
+	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0.2s;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+.button.raised:active {
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+	transition-delay: 0s;
+}
+.disable {
+	opacity: 0.8;
+	color: rgba(0, 0, 0, 0.25);
+}
+.disable:hover {
+	opacity: 0.8;
+	color: rgba(0, 0, 0, 0.25);
+}
+.material-icons {
+	font-size: 1.2em;
+	line-height: 50px;
+}
+
+@-webkit-keyframes
+pulse
+{
+	0%
+	{
+		opacity: 1.0;
+
+	}
+	45%
+	{
+		opacity: .20;
+
+	}
+	100%
+	{
+		opacity: 1.0;
+
+	}
+}
+@-moz-keyframes
+pulse
+{
+	0%
+	{
+		opacity: 1.0;
+	}
+	45%
+	{
+		opacity: .20;
+
+	}
+	100%
+	{
+		opacity: 1.0;
+	}
+}
+
+#map_graphics_layer {
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-name: pulse;
+	-moz-animation-duration: 3s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-name: pulse;
+}
